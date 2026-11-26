@@ -1,0 +1,29 @@
+services:
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_DB: medflow
+      POSTGRES_USER: medflow
+      POSTGRES_PASSWORD: medflow
+    volumes:
+      - medflow-pg:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U medflow"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+
+  api:
+    build: .
+    environment:
+      DATABASE_URL: postgresql+psycopg://medflow:medflow@db:5432/medflow
+      JWT_SECRET: change-me-in-production
+      MEDFLOW_DEMO_PASSWORD: medflow2026
+    ports:
+      - "8000:8000"
+    depends_on:
+      db:
+        condition: service_healthy
+
+volumes:
+  medflow-pg:

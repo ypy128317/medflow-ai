@@ -1,0 +1,15 @@
+services:
+  medflow:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: medflow-ai
+    restart: always
+    ports:
+      - "8005:8000"
+    env_file:
+      - .env
+    volumes:
+      - medflow-data:/data
+volumes:
+  medflow-data:

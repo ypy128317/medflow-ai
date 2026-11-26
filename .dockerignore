@@ -1,0 +1,11 @@
+**/node_modules
+**/.git
+**/.edge-*
+**/__pycache__
+**/*.db
+**/.env
+**/dist
+**/screenshots
+**/*.log
+**/tests
+docs
