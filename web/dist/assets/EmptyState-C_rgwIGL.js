@@ -1,0 +1,1 @@
+import{p as e,c as a,d as s,_ as n,b as c,t as o}from"./index-D9r-_9FJ.js";const r={class:"empty-state"},m={__name:"EmptyState",props:{text:{type:String,default:"暂无数据"},icon:{type:String,default:"box"}},setup(t){return(i,l)=>(e(),a("div",r,[s(n,{name:t.icon,size:30},null,8,["name"]),c("p",null,o(t.text),1)]))}};export{m as _};

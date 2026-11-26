@@ -14,12 +14,10 @@ backend/tests/test_medflow.db
 backend/**/__pycache__/
 backend/.pytest_cache/
 web/node_modules/
-web/dist/
 web/.vite-*.log
 web/login-shot.png
 .edge-web-*/
 portal/node_modules/
-portal/dist/
 portal/.vite-*.log
 .edge-portal-*/
 
